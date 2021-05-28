@@ -1,0 +1,22 @@
+<div style="justify-content: center; text-align: center;">
+    <h1>Tic-Tac-Toe</h1>
+    <p *ngIf="!winner">Current Player : {{currentPlayer}}</p>
+    <button (click)="newGame()">Start new Game</button>
+    <!-- tsParticles div container -->
+<div *ngIf="winner" >
+    <h2>{{winner}} won the game!!</h2>
+</div>
+
+<!-- tsParticles main script -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tsparticles@1.22.1"></script>
+
+<!-- tsParticles confetti shape script -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/tsparticles-shape-confetti@1.7.1"></script>
+    
+    <br><br>
+    <main *ngIf="!winner" style="justify-content: center;">
+        <app-square *ngFor="let val of squares;let i =index" [value]="val" (click)="makeMove(i)"></app-square>
+    </main>
+
+</div>
+
